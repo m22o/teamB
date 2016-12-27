@@ -20,3 +20,6 @@ group :development do
   gem 'pry-rails'
   gem 'pry'
 end
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
