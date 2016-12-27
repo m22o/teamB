@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car: MyString
+  travel: MyString
+  place: MyString
+
+two:
+  car: MyString
+  travel: MyString
+  place: MyString
