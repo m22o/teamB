@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get    '/signup',  to: 'users#new'
   post   '/signup',  to: 'users#create'
-  resources :users, expect:[:new,:create,:update]
+  resources :users, only:[:edit,:show,:destroy]
   resources :cars, expect:[:create,:update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

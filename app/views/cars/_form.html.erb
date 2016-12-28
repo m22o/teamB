@@ -13,13 +13,11 @@
 
   <div class="field">
     <%= f.label :car_number %><br>
-    <%= f.text_field :car_number %>
-  </div>
-  <div class="field">
+    <%= f.text_field :car_number ,class: 'form-control'%>
+
     <%= f.label :color %><br>
-    <%= f.text_field :color %>
+    <%= f.text_field :color, class: 'form-control'%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.submit class: "btn btn-primary"%>
 <% end %>

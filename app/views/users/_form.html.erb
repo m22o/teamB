@@ -10,20 +10,17 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
+    <%= f.text_field :name , class: 'form-control' %>
+
     <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
+    <%= f.text_field :password , class: 'form-control' %>
+
     <%= f.label :car_id %><br>
     <%= f.collection_select :car_id, Car.all, :id, :car_number, include_blank: true %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  </br>
+    <%= f.submit  class: "btn btn-primary" %>
 <% end %>
