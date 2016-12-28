@@ -1,0 +1,53 @@
+current directory: /vagrant/teamB/vendor/bundler/ruby/2.3.0/gems/therubyracer-0.12.2/ext/v8
+/home/vagrant/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20161227-1794-qqypyl.rb extconf.rb
+checking for main() in -lpthread... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /vagrant/teamB/vendor/bundler/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/therubyracer-0.12.2/mkmf.log
+
+current directory: /vagrant/teamB/vendor/bundler/ruby/2.3.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR=" clean
+make: 警告: ファイル `Makefile' の修正時刻が 52 秒分未来の時刻です
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+current directory: /vagrant/teamB/vendor/bundler/ruby/2.3.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR="
+make: 警告: ファイル `Makefile' の修正時刻が 52 秒分未来の時刻です
+compiling accessor.cc
+compiling array.cc
+compiling backref.cc
+compiling constants.cc
+compiling constraints.cc
+compiling context.cc
+compiling date.cc
+compiling exception.cc
+compiling external.cc
+compiling function.cc
+compiling gc.cc
+compiling handles.cc
+compiling heap.cc
+compiling init.cc
+compiling invocation.cc
+compiling locker.cc
+compiling message.cc
+compiling object.cc
+compiling primitive.cc
+compiling rr.cc
+compiling script.cc
+compiling signature.cc
+compiling stack.cc
+compiling string.cc
+compiling template.cc
+compiling trycatch.cc
+compiling v8.cc
+compiling value.cc
+linking shared-object v8/init.so
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+current directory: /vagrant/teamB/vendor/bundler/ruby/2.3.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR=" install
+make: 警告: ファイル `Makefile' の修正時刻が 35 秒分未来の時刻です
+/usr/bin/install -c -m 0755 init.so ./.gem.20161227-1794-hop5uu/v8
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.

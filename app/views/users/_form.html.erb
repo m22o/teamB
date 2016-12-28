@@ -1,0 +1,26 @@
+<%= form_for(@user, url: signup_path) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name , class: 'form-control' %>
+
+    <%= f.label :password %><br>
+    <%= f.text_field :password , class: 'form-control' %>
+
+    <%= f.label :car_id %><br>
+    <%= f.collection_select :car_id, Car.all, :id, :car_number, include_blank: true %>
+  </div>
+  
+  </br>
+    <%= f.submit  class: "btn btn-primary" %>
+<% end %>

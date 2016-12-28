@@ -6,9 +6,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app", '/', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   '/' %></li>
+            <% if logged_in?%>
+             <li><%= link_to "account", user_path(current_user) %></li>
+             <li><%= link_to "Log_out",   logout_path, method: "delete" %></li>
+             <li><%= link_to "配車を頼む", new_travel_path%></li>
+            <% else %>
+             <li><%= link_to "Sign_up",   '/signup' %></li>
+             <li><%= link_to "Log_in",   '/login' %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
