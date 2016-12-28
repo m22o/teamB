@@ -12,10 +12,10 @@
   <% end %>
   <div class="field">
     <%= f.label :from %><br>
-    <%= f.collection_select :from, From.all, :id, :place_id %>
+    <%= f.collection_select :from_id, From.all, :id, :place_id %>
 
     <%= f.label :to %><br>
-    <%= f.collection_select :from, To.all, :id, :to_id %>
+    <%= f.collection_select :to_id, To.all, :id, :place_id %>
   </div>
 
   </br>
