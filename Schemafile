@@ -1,0 +1,27 @@
+create_table "users", force: true do |t|
+
+	t.string "name"
+	t.string "pass"
+	t.string "phone"
+	t.string "car_id"
+end
+
+create_table "cars", force: true do |t|
+	
+	t.string "car_number"
+	t.string "color"
+end
+
+
+create_table "travels", force: true do |t|
+	
+	t.string "user_id"
+	t.string "from_id"
+	t.string "to_id"
+end
+
+create_table "places", force: true do |t|
+	
+	t.string "name"
+
+end

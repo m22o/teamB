@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+	
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  	root :to => 'users#new'
+	get '/new' => 'users#new'
+	get '/home' => 'users#show'
+	
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -40,6 +42,9 @@ Rails.application.routes.draw do
   #     end
   #   end
 
+		resources :users, only: [:create, :new,:show]
+		resources :cars, only: [:create, :new, :show]
+		
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
