@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :users, expect:[:create,:update]
+  get '/', to: 'roots#home'
+
+  get 'session/new'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  get    '/signup',  to: 'users#new'
+  post   '/signup',  to: 'users#create'
+  resources :users, expect:[:new,:create,:update]
   resources :cars, expect:[:create,:update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

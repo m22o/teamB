@@ -10,14 +10,12 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.create(car_params)
-    respond_to do |format|
-      if @car.save
-        format.html { redirect_to @car, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @car}
-      else
-        format.html { render :new }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
+    @car.update(user_id: current_user.id)
+    current_user.update(car_id: @car.id)
+    if @car.save
+      redirect_to @car
+    else
+      render 'new'
     end
   end
 
@@ -26,14 +24,10 @@ class CarsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @car.update(user_params)
-        format.html { redirect_to @car, notice: 'koushin dekitayo'}
-        format.json { head :no_conten}
-      else
-        format.html { render action: 'edit'}
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
+    if @car.update(car_params)
+      redirect_to @car
+    else
+      render 'new'
     end
   end
 
@@ -45,5 +39,4 @@ class CarsController < ApplicationController
   def set_car
     @car = Car.find(params[:id])
   end
-
 end
