@@ -16,6 +16,7 @@
             <% if logged_in?%>
              <li><%= link_to "account", user_path(current_user) %></li>
              <li><%= link_to "Log_out",   logout_path, method: "delete" %></li>
+             <li><%= link_to "配車を頼む", new_travel_path%></li>
             <% else %>
              <li><%= link_to "Sign_up",   '/signup' %></li>
              <li><%= link_to "Log_in",   '/login' %></li>

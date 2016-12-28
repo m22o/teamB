@@ -1,0 +1,23 @@
+<%= form_for(@travel) do |f| %>
+  <% if @travel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@travel.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @travel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :from %><br>
+    <%= f.collection_select :from, From.all, :id, :place_id %>
+
+    <%= f.label :to %><br>
+    <%= f.collection_select :from, To.all, :id, :to_id %>
+  </div>
+
+  </br>
+    <%= f.submit  class: "btn btn-primary" %>
+<% end %>

@@ -15,8 +15,8 @@ create_table "cars", force: :cascade do |t|
 end
 
 create_table "travels", force: :cacsade do |t|
-  t.integer "from"
-  t.integer "to"
+  t.integer "from_id"
+  t.integer "to_id"
   t.integer "user_id"
   t.datetime "created_at", null:false
   t.datetime "updated_at", null:false
@@ -26,4 +26,12 @@ create_table "places", force: :cascade do |t|
   t.string "name"
   t.datetime "created_at", null:false
   t.datetime "updated_at", null:false
+end
+
+create_table "froms", force: :cascade do |t|
+  t.integer "place_id"
+end
+
+create_table "tos", force: :cascade do |t|
+  t.integer "place_id"
 end

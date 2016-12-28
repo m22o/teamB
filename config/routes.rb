@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'roots#home'
-
-  get 'session/new'
-
+  root 'roots#home'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
@@ -11,6 +8,7 @@ Rails.application.routes.draw do
   post   '/signup',  to: 'users#create'
   resources :users, only:[:edit,:show,:destroy]
   resources :cars, expect:[:create,:update]
+  resources :travels
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

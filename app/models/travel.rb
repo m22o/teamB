@@ -1,4 +1,5 @@
 class Travel < ActiveRecord::Base
   belongs_to :user
-  belongs_to :place
+  has_many :froms
+  has_many :tos
 end

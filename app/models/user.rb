@@ -3,12 +3,7 @@ class User < ActiveRecord::Base
   has_many :travels
 
   def have_car?
-    car = Car.find_by(user_id: self.id)
-    if car.nil?
-      true
-    else
-      false
-    end
+    self.car.nil?
   end
 
 #とりあえず自作auth 簡単に

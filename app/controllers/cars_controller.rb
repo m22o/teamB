@@ -10,8 +10,8 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.create(car_params)
-    @car.update(user_id: current_user.id)
-    current_user.update(car_id: @car.id)
+    @car.user = current_user
+    current_user = @car
     if @car.save
       redirect_to @car
     else

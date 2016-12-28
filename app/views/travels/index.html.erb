@@ -1,0 +1,19 @@
+<h1> Listing Travels </h1>
+<% @travels.each_with_index(1) do |travel, ti|%>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <% travel_fields.each do |field| %>
+      <th><%= field %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= ti %></th>
+      <td><%= travel.from %></td>
+      <td><%= travel.to %></td>
+      <td><%= travel.user %></td>
+    </tr>
+  </tbody>
+</table>
