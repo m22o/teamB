@@ -15,5 +15,6 @@
 <% if current_user.have_car? %>
   <%= link_to 'Car', new_car_path %>
 <% else %>
-  <%= link_to 'my Car', car_path(current_user.car_id)%>
+<% binding.pry %>
+  <%= link_to 'my Car', car_path(current_user.car.id)%>
 <% end %>

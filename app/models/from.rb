@@ -1,4 +1,4 @@
 class From < ActiveRecord::Base
-  belongs_to :travel
+  has_many :travel
   belongs_to :place
 end

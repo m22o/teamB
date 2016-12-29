@@ -1,4 +1,6 @@
 class TravelsController < ApplicationController
+  before_action :set_travel, only: [:show, :edit, :update, :destroy]
+
   def index
     @travels = Travel.all
   end
@@ -24,7 +26,10 @@ class TravelsController < ApplicationController
 
   private
   def travel_params
-    params(:travel).permit(:from_id, :to_id)
+    params.require(:travel).permit(:from_id, :to_id)
   end
 
+  def set_travel
+    @travel = Travel.find(params[:id])
+  end
 end
