@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>From:</strong>
-  <%= @travel.from %>
+  <%= @travel.from.place.name %>
 </p>
 
 <p>
   <strong>To:</strong>
-  <%= @travel.to %>
+  <%= @travel.to.place.name %>
 </p>
 <p>
   <strong>User:</strong>
-  <%= @travel.user %>
+  <%= @travel.user.name %>
 </p>
 <%= link_to 'Back', '/' %>

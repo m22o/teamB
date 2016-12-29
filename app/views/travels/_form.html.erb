@@ -12,10 +12,10 @@
   <% end %>
   <div class="field">
     <%= f.label :from %><br>
-    <%= f.collection_select :from_id, From.all, :id, :place_id %>
+    <%= f.select :from_id, From.all.map{|from| [from.place.name, from.id]}, class: 'form-control'%><br>
 
     <%= f.label :to %><br>
-    <%= f.collection_select :to_id, To.all, :id, :place_id %>
+    <%= f.select :to_id, To.all.map{|to| [to.place.name, to.id]}, class: 'form-control'%>
   </div>
 
   </br>
